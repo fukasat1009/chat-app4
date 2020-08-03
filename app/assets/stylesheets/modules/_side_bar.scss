@@ -19,9 +19,11 @@
       font-size: 16px;
       padding: 0 20px;
       font-weight: bold;
+      color: #fff;
     }
     &__icons {
       display: flex;
+      color: #fff;
     }
   }
 
@@ -32,17 +34,20 @@
     align-items: center;
     bottom: 0;
     overflow: scroll;
+    color: #fff;
 
     &__name{
       font-size: 15px;
       padiing: 0px 5px;
       text-align: left;
+      color: #fff;
       }
 
     &__message {
       font-size: 11px;
       text-align: left;
       padiing-bottom: 40px;
+      color: #fff;
     }
   }
 }
