@@ -1,5 +1,5 @@
 
-.wrapper
+.contents
   = render 'messages/side_bar'
   .chat-main
     .main-header
@@ -7,9 +7,10 @@
     .content-bottom
       .footer
         .form-content
-          .image
+          %form.textbox
+            %input{type: "text", class: "form-content__input", placeholder: "type a message"}
+          %label{class: "form-content__image"}
             = icon('far', 'image')
-        .margin
         .submit
           .text
             Send
