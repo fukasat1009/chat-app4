@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.contents {
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -10,61 +10,78 @@
 
   .chat-main {
    width: calc(100vw - 300px);
-   float: left;
+   float: left; /* 浮かせないとハマらない */
 
-   .main-header {
-    height: 100px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #eeeeee;
-    position: relative;
-    overflow: scroll;
-    &__left-box {
-     margin-top: 35px;
-     &__current-group {
-      margin-bottom: 15px;
-      font-size: 20px;
-      color: #333333;
-     }
-    }
-   }
-   .messages {
-     height: calc(100vh - 190px);
-     padding: 46px 40px;
-     background-color: #fafafa;
-     overflor: scroll;
-     }
-
-.content-bottom {
-    padding: 20px 50px 20px 40px;
-    height: 90px;
-    width: calc(100vw - 300px);
-    background-color: #d2d2d2;
-    .footer {
+    .main-header {
+      height: 100px;
+      padding: 0 40px;
       display: flex;
-      justify-content: space-between;
-      height: 50px;
-      background-color: #fff;
-      .form-content {
-        padding: 0px 10px 0px 15px;
-        background-color: #fff;
-        line-height: 50px;
-        font-size: 25px;
+      justify-content: space-between; /*最初のアイテムは先頭、最後は末尾 */
+      border-bottom: 1px solid #eeeeee;
+      position: relative;
+      overflow: scroll;
+
+      &__left-box {
+       margin-top: 35px;
+      }
+
+      &__current-group {
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #333333;
+      }
+    }
+
+    .messages {
+      height: calc(100vh - 190px);
+      padding: 46px 40px;
+      background-color: #fafafa;
+      overflor: scroll;  /* 必要ないかも */
+    }
+
+    .content-bottom {
+      padding: 20px 50px 20px 40px;
+      height: 90px;
+      width: calc(100vw - 300px);
+      background-color: #d2d2d2;
+
+      .footer {
+        display: flex;
+
+        .form-content {
+          width: calc(100vw - 380px);
+          position: relative;
+          display: flex;
+
+          &__input { /* 入力部分 */
+            width: 100%;
+            height: 50px;
+            position: absolute; /* form-contentに対して絶対位置で必要。ないと崩れる */
+            padding: 0 40px 0 10px;
+            border: none;
+
+          &__image {
+            position: absolute;
+            right: 10px;
+            font-size: 1.3rem;
+            top: 10px;
+          }
         }
-        .image {
-          text-align: right;
-        }
-        .margin {
-          background-color: #d2d2d2;
-        }
+      }
         .submit {
-          background-color: #38AEF0;
-          width: 100.34px;
-          margin-bottom: 0;
-          .text {
+
+          .btn-content {
+            background-color: #38AEF0;
+            border: none;
             color: #fff;
             font-size: 16px;
+            height: 50px;
+            margin-left: 15px;
+            padding: 0 30px;
+          }
+
+          &__text { /* テキスト部分で用意したけど不要になった */
+            color: #fff;
             text-align: center;
             margin-top: 15px;
             margin-bottom: 10px;
