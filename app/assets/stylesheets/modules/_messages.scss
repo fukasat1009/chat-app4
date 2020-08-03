@@ -46,44 +46,42 @@
       background-color: #d2d2d2;
 
       .footer {
-        display: flex; /* フォームとボタンを横並びにする */
-        justify-content: space-between;
-        height: 50px;
+        display: flex;
 
         .form-content {
-          line-height: 50px;
-          width: 100%;
-          margin: 0;
-          background-color: #fff;
+          width: calc(100vw - 380px);
+          position: relative;
+          display: flex;
 
-
-
-          &__input {
-            padding: 0px 0px 0px 15px;
-            border: none;
-            height: 50px;
+          &__input { /* 入力部分 */
             width: 100%;
-            padding: 0 45px 0 15px;
-
-
-          }
+            height: 50px;
+            position: absolute; /* form-contentに対して絶対位置で必要。ないと崩れる */
+            padding: 0 40px 0 10px;
+            border: none;
 
           &__image {
-              text-align: right;
-              padding-right: 10px;
-              position: relative;
+            position: absolute;
+            right: 10px;
+            font-size: 1.3rem;
+            top: 10px;
           }
         }
-
+      }
         .submit {
-          background-color: #38AEF0;
-          width: 100.34px;
-          margin-bottom: 0;
-          margin-left: 15px; /* ボタン横の隙間開け */
 
-          .text {
+          .btn-content {
+            background-color: #38AEF0;
+            border: none;
             color: #fff;
             font-size: 16px;
+            height: 50px;
+            margin-left: 15px;
+            padding: 0 30px;
+          }
+
+          &__text { /* テキスト部分で用意したけど不要になった */
+            color: #fff;
             text-align: center;
             margin-top: 15px;
             margin-bottom: 10px;
