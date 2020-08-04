@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
   def new
     @group = Group.new
     @group.users << current_user #ログイン中のユーザーを必ず含める記述
@@ -27,6 +28,7 @@ class GroupsController < ApplicationController
   end
   private
     def group_params
-      params.require(:group).permit(:name, user_ids: [])
+      params.require(:group).permit(:name, :user_ids => [])
     end
+
 end
