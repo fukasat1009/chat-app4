@@ -1,24 +1,4 @@
 
-.contents
+.content
   = render 'messages/side_bar'
-  .chat-main
-    .main-header
-      = @group.name
-      %ul.main-header__left-box__member-list
-        Member：
-        %li.main-header__left-box__member-list__member 
-          - @group.group_users.each do |group_user|
-            = group_user.user.name
-      = link_to edit_group_path(@group) do
-        edit
-    .messages
-      = render @messages
-    .content-bottom
-      .footer
-        .form-content
-          = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
-            = f.text_field :body, class: 'form-content', placeholder: 'type a message'
-            = f.label :image, class: 'form-content__input__image' do
-              = icon('far', 'image', class: 'form-content__input__image')
-              = f.file_field :image, class: 'form-content__input__icon'
-            = f.submit 'Send', class: 'btn-content'
+  = render 'messages/main_chat'

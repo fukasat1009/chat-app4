@@ -1,0 +1,12 @@
+.main
+  .main-header
+  .main-chat
+  .main-footer
+    .form
+      .input
+        %form.textbox
+          %input{type: "text", class: "input__box", placeholder: "type a message"}
+            %label{class: "input__box__image"}
+              = icon('far', 'image')
+      .submit
+        %input{type: "submit",value: "Send", class: "btn"}

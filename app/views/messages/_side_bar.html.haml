@@ -1,18 +1,3 @@
-.chat-side
+.side-bar
   .side-header
-    .side-header__name
-      = current_user.name
-      .side-header__name__icons
-        = link_to new_group_path do
-          = icon('far', 'edit')
-        = link_to edit_user_path(current_user) do
-          = icon('fas', 'cog')
-
-  .groups
-    - current_user.groups.each do |group|
-      .groups__name
-        = link_to group_messages_path(group) do
-          .groups__message
-            = group.name
-          .groups__message
-            = group.show_last_message
+  .side-group
