@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root "messages#index"
+
+  devise_for :users
+  root 'messages#index'
+  resources :users
+  resources :groups  do
+    resources :messages
+   end
 end
